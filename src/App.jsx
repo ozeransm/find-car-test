@@ -16,8 +16,8 @@ function App() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
-      {/* basename="/find-car-test" */}
-    <Router>
+     
+    <Router basename="/find-car-test">
       <ChakraProvider theme={theme}>
         <Routes>
           <Route path="/" element={<Navbar />} >
