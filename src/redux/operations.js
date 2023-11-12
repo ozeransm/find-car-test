@@ -3,22 +3,10 @@ import { fetchData } from "../api/fetchData";
 
 export const fetchDatas = createAsyncThunk(
         'phonebook/fetchData',
-    async (page, thunkAPI) => {
+    async(param={}, thunkAPI) => {
+       
             try {
-                const response = await fetchData(page);
-                return response.data;
-            } catch (error) {
-                return thunkAPI.rejectWithValue(error.message);
-            }
-      
-        }
-    )
-
-export const refresh = createAsyncThunk(
-        'phonebook/fetchData',
-    async (_, thunkAPI) => {
-            try {
-                const response = await fetchData();
+                const response = await fetchData(param);
                 return response.data;
             } catch (error) {
                 return thunkAPI.rejectWithValue(error.message);

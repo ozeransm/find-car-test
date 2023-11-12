@@ -8,7 +8,7 @@ export const data = createSlice({
         isLoading: false,
         error: null,
         data: [],
-        filter: null,
+        filteres: [],
         dataModal: {},
         favorite: [],
   },
@@ -29,6 +29,9 @@ export const data = createSlice({
       initFavorite: (state, action) => {
           state.favorite = []      
     },
+      initFilter: (state, action) => {
+          state.filteres = []    
+    },
       setDataModal: (state, action) => {
         state.dataModal = { ...action.payload };
         
@@ -38,6 +41,18 @@ export const data = createSlice({
     },
       delFavorite: (state, action) => {
         state.favorite = [...state.favorite.filter((el)=>el!==action.payload)]
+    },
+      setFilterMenu: (state, action) => {
+          state.filteres = [...state.filteres, action.payload]    
+    },
+      delFilterMenu: (state, action) => {
+          state.filteres = [...state.filteres.filter((el) => !el.make)]     
+    },
+      setFilterPrice: (state, action) => {
+          state.filteres = [...state.filteres, action.payload]    
+    },
+      delFilterPrice: (state, action) => {
+          state.filteres = [...state.filteres.filter((elem) => !elem.rentalPrice)]     
     }  
     },
     extraReducers: (builder) => {
@@ -46,7 +61,7 @@ export const data = createSlice({
                 state.isLoading = true;
             })
             .addCase(fetchDatas.fulfilled, (state, action) => {
-                state.data.push(...action.payload);
+                state.data=[...state.data,...action.payload];
                 state.isLoading = false;
                 state.error = null;
             })
@@ -57,5 +72,18 @@ export const data = createSlice({
     }
 })
 
-export const { increment, decrement, initValue, setDataModal, setFavorite, delFavorite, initData, initFavorite } = data.actions
+export const { increment,
+    decrement,
+    initValue,
+    setDataModal,
+    setFavorite,
+    delFavorite,
+    initData,
+    initFavorite,
+    initFilter,
+    setFilterMenu,
+    delFilterMenu,
+    setFilterPrice,
+    delFilterPrice
+} = data.actions
 export const reducer = combineReducers({ data: data.reducer })
