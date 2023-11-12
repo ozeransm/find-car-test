@@ -6,7 +6,7 @@ import { Favorites } from "./page/Favorites"
 import { ChakraProvider, useDisclosure } from "@chakra-ui/react"
 import "@fontsource/manrope"
 import theme from "../font/theme.font"
-import { ModalWin } from "./components/modal"
+import { ModalWin } from "./components/Modal"
 import { useSelector } from "react-redux"
 import { dataModal } from "./redux/selectors"
 
