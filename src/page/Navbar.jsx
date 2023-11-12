@@ -27,6 +27,7 @@ export const Navbar = () => {
     const dispatch = useDispatch();
     const filtere = useSelector(filteres);
     const navigate = useNavigate();
+    
     useEffect(() => {
     
     return () => {
@@ -61,14 +62,13 @@ export const Navbar = () => {
     }
     return (
         <>
-        <Box mt='176px' mb='50px' maxW='100%' display='flex' justifyContent='center'>
-            <Flex gap='8px' alignItems='flex-end'>
+        <Box ml='30px' mr='30px' mt='176px' mb='50px' maxW='100%' display='flex' justifyContent='center'>
+            <Flex gap='8px' alignItems='flex-end' flexWrap='wrap'>
             <Box>
             <Text color='#8A8A89' fontSize='14px' fontWeight='500'>Car brand</Text>      
             <Menu >
                 <MenuButton as={Button} backgroundColor="#F7F7FB" >
-                Enter the text
-                {/* {menuItem.filter((el) => el?.menu)[0].menu || 'Enter the text'} */}
+                {!filtere.length ? 'Enter the text' : filtere[0].make}
                 <ChevronUpIcon ml='51px'/>
             </MenuButton>
                 <MenuList maxWidth='224px' maxHeight="272px"

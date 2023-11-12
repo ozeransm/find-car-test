@@ -23,17 +23,19 @@ export const Catalog = ({ onOpen, onClose, isOpen }) => {
     }
     
     return (
-        
-        !isLoad && <Box pb='150px'>
-            <Flex mb='100px' ml='auto' mr='auto' maxW='1184px' flexWrap='wrap' rowGap='50px' columnGap='29px'>
+        <>
+        <Box ml='30px' mr='30px' maxW='100vw'  display='flex' justifyContent='center'>
+            
+            <Flex mb='100px' justifyContent='center' maxW='1184px' flexWrap='wrap' rowGap='50px' columnGap='29px'>
                 {itemsCars.map((el) => (<ItemCar key={nanoid()} item={el} onOpen={onOpen} onClose={onClose} isOpen={isOpen} />))}
             </Flex>
-            <Center>
-                {filtere.length === 0 && <Link mt='100px' onClick={handlerLoadMore}>Load more</Link>}
-                
-            </Center> 
+            
             
         </Box>
-            
+        <Center>
+                {filtere.length === 0 && <Link mb='100px' onClick={handlerLoadMore}>Load more</Link>}
+                
+        </Center> 
+        </>    
     )
 }
