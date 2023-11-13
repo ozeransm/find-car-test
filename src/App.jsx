@@ -24,7 +24,7 @@ function App() {
             <Route index element={<Homepage />} />
             <Route path="catalog" element={<Catalog onOpen={onOpen} onClose={onClose} isOpen={isOpen} />} />
             <Route path="favorites" element={<Favorites onOpen={onOpen} onClose={onClose} isOpen={isOpen}/>} />
-            <Route path="*" redirectTo="/" />
+            <Route path="*" redirectTo="" />
           </Route>               
         </Routes>
           {elem.id && <ModalWin onOpen={onOpen} onClose={onClose} isOpen={isOpen} elem={elem} />}
