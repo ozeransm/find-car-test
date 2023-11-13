@@ -27,8 +27,8 @@ export const Favorites = ({ onOpen, onClose, isOpen }) => {
 
        
     return (
-        !isLoad && <Box pb='150px'>
-            <Flex mb='100px' ml='auto' mr='auto' maxW='1184px' flexWrap='wrap' rowGap='50px' columnGap='29px'>
+        !isLoad && <Box pb='150px' display='flex' justifyContent='center'>
+            <Flex mb='100px' maxW='1184px' flexWrap='wrap' rowGap='50px' columnGap='29px'>
                 {itemsCars.map((el) => {
                     if(fav.includes(el.id))
                     return (<ItemCar

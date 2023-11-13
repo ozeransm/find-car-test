@@ -17,7 +17,7 @@ function App() {
   return (
     <>
      {/* basename="/find-car-test" */}
-    <Router basename="/find-car-test">
+    <Router >
       <ChakraProvider theme={theme}>
         <Routes>
           <Route path="/" element={<Navbar />} >
