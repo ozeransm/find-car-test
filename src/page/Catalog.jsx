@@ -8,7 +8,6 @@ import { nanoid } from "nanoid";
 
 export const Catalog = ({ onOpen, onClose, isOpen }) => {
     const itemsCars = useSelector(data);
-    const isLoad = useSelector(isLoading);  
     const dispatch = useDispatch();
     const count = useSelector(counter);
     const filtere = useSelector(filteres);

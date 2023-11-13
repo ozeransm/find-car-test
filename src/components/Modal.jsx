@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react"
 import { nanoid } from "nanoid"
 
-export const ModalWin = ({ isOpen, onClose, onOpen, elem }) => {
+export const ModalWin = ({ isOpen, onClose, elem }) => {
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

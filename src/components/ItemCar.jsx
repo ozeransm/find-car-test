@@ -6,16 +6,15 @@ import {
     Button,
     Flex,
     Spacer,
-    Box,
-    Icon
+    Box    
 } from "@chakra-ui/react"
 import { useDispatch, useSelector } from "react-redux";
 import { delFavorite, setDataModal, setFavorite } from "../redux/reducer";
 import { ReactSVG } from 'react-svg'
 import like from "../../img/like.svg"
-import { dataModal, favorite } from "../redux/selectors";
+import { favorite } from "../redux/selectors";
 
-export const ItemCar = ({ item, onOpen, onClose, isOpen }) => {
+export const ItemCar = ({ item, onOpen }) => {
     const dispath = useDispatch();
     const fav = useSelector(favorite);
     const handlerBtn = (el) => {

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { counter, data, favorite, isLoading } from "../redux/selectors";
+import { data, favorite, isLoading } from "../redux/selectors";
 import { ItemCar } from "../components/ItemCar";
 import { useEffect } from "react";
 import { Box, Flex } from "@chakra-ui/react";
@@ -10,7 +10,6 @@ import { initData, initFavorite, initValue } from "../redux/reducer";
 export const Favorites = ({ onOpen, onClose, isOpen }) => {
     const dispatch = useDispatch();
     const fav = useSelector(favorite);
-    const count = useSelector(counter);
     const itemsCars = useSelector(data);
     const isLoad = useSelector(isLoading);  
 

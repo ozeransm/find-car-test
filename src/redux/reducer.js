@@ -19,17 +19,17 @@ export const data = createSlice({
       decrement: (state) => {
       state.value -= 1
     },
-      initValue: (state, action) => {
+      initValue: (state) => {
         state.value = 1
               
     },
-      initData: (state, action) => {
+      initData: (state) => {
         state.data = []  
     },
-      initFavorite: (state, action) => {
+      initFavorite: (state) => {
           state.favorite = []      
     },
-      initFilter: (state, action) => {
+      initFilter: (state) => {
           state.filteres = []    
     },
       setDataModal: (state, action) => {
@@ -45,13 +45,13 @@ export const data = createSlice({
       setFilterMenu: (state, action) => {
           state.filteres = [...state.filteres, action.payload]    
     },
-      delFilterMenu: (state, action) => {
+      delFilterMenu: (state) => {
           state.filteres = [...state.filteres.filter((el) => !el.make)]     
     },
       setFilterPrice: (state, action) => {
           state.filteres = [...state.filteres, action.payload]    
     },
-      delFilterPrice: (state, action) => {
+      delFilterPrice: (state) => {
           state.filteres = [...state.filteres.filter((elem) => !elem.rentalPrice)]     
     }  
     },
