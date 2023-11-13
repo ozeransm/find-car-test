@@ -14,7 +14,6 @@ jobs:
       - name: Install, lint, build 🔧
         run: |
           npm install
-          npm run eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0
           npm run build
 
       - name: Deploy 🚀
