@@ -14,7 +14,6 @@ import {
 import { ChevronUpIcon } from "@chakra-ui/icons"
 import { useDispatch, useSelector } from "react-redux"
 import { delFilterMenu, delFilterPrice, initData, initFilter, initValue, setFilterMenu, setFilterPrice } from "../redux/reducer"
-import { useEffect } from "react"
 import { filteres } from "../redux/selectors"
 import { fetchDatas } from "../redux/operations"
  
@@ -23,14 +22,7 @@ export const Navbar = () => {
     const dispatch = useDispatch();
     const filtere = useSelector(filteres);
     const navigate = useNavigate();
-    
-    useEffect(() => {
-    
-    return () => {
-        // dispatch(initFilter());
-    }
-    }, [])
-    
+   
     const handlerBtn = () => {
         dispatch(initData());
         dispatch(initValue());
@@ -53,7 +45,6 @@ export const Navbar = () => {
         dispatch(initValue());
     }
     function handlerFavorite() {
-        dispatch(fetchDatas())
         navigate('/favorites');
         dispatch(initValue()); 
     }

@@ -1,0 +1,20 @@
+ {/* basename="/find-car-test" */}  
+    {/* <Router >
+      <ChakraProvider theme={theme}>
+        <Routes>
+          <Route path="/" element={<Navbar />} >
+            <Route index element={<Homepage />} />
+            <Route path="catalog" element={<Catalog onOpen={onOpen} onClose={onClose} isOpen={isOpen} />} />
+            <Route path="favorites" element={<Favorites onOpen={onOpen} onClose={onClose} isOpen={isOpen}/>} />
+            <Route path="*" redirectTo="" />
+          </Route>               
+        </Routes>
+          {elem.id && <ModalWin onOpen={onOpen} onClose={onClose} isOpen={isOpen} elem={elem} />}
+      </ChakraProvider>      
+    </Router>
+     */}
+
+    // localStorage.clear();
+    // const flag = localStorage.getItem("persist:root");
+    // if (!flag)
+    // dispatch(fetchDatas({ make: filtere.length !== 0 ? filtere.filter((el) => el.make)[0].make : '' }))

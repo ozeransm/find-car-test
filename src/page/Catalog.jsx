@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux"
-import { counter, data, filteres, isLoading } from "../redux/selectors"
+import { counter, data, filteres } from "../redux/selectors"
 import { ItemCar } from "../components/ItemCar";
 import { Box, Center, Flex, Link } from "@chakra-ui/react";
 import { fetchDatas } from "../redux/operations";
-import { increment, initData, initFavorite, initValue } from "../redux/reducer";
+import { increment, initData, initValue } from "../redux/reducer";
 import { nanoid } from "nanoid";
 import { useEffect } from "react";
 
@@ -14,15 +14,11 @@ export const Catalog = ({ onOpen, onClose, isOpen }) => {
     const filtere = useSelector(filteres);
     
     useEffect(() => {
-        // const flag = localStorage.getItem("persist:root");
-        // if (!flag)
-        // dispatch(fetchDatas({ make: filtere.length !== 0 ? filtere.filter((el) => el.make)[0].make : '' }))
         
         return () => {
-            // localStorage.clear();
             dispatch(initValue());
             dispatch(initData());
-            // dispatch(initFavorite());
+            
         }
     }, [])
     
