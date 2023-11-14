@@ -1,4 +1,4 @@
-import { Route, Routes, HashRouter } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes, HashRouter } from "react-router-dom"
 import { Navbar } from "./page/Navbar"
 import { Homepage } from "./page/Homepage"
 import { Catalog } from "./page/Catalog"
@@ -15,9 +15,9 @@ function App() {
   const elem = useSelector(dataModal);
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
-    <HashRouter>
+    <Router basename="/find-car-test">
        
-          <ChakraProvider theme={theme}>
+      <ChakraProvider theme={theme}>
         <Routes>
           <Route path="/" element={<Navbar />} >
             <Route index element={<Homepage />} />
@@ -29,7 +29,7 @@ function App() {
           {elem.id && <ModalWin onOpen={onOpen} onClose={onClose} isOpen={isOpen} elem={elem} />}
       </ChakraProvider>
  
-    </HashRouter>
+    </Router>
    
   )
 }
