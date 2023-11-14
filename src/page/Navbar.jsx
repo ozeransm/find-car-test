@@ -27,7 +27,7 @@ export const Navbar = () => {
     useEffect(() => {
     
     return () => {
-        dispatch(initFilter());
+        // dispatch(initFilter());
     }
     }, [])
     
@@ -53,6 +53,7 @@ export const Navbar = () => {
         dispatch(initValue());
     }
     function handlerFavorite() {
+        dispatch(fetchDatas())
         navigate('/favorites');
         dispatch(initValue()); 
     }

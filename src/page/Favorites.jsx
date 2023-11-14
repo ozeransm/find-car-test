@@ -14,15 +14,17 @@ export const Favorites = ({ onOpen, onClose, isOpen }) => {
     const isLoad = useSelector(isLoading);  
 
     useEffect(() => {
-        const flag = localStorage.getItem("persist:root");
-        if (!flag) dispatch(fetchDatas())
-        else if (JSON.parse(JSON.parse(localStorage.getItem("persist:root")).data).data.length===0)dispatch(fetchDatas()); 
+        // const flag = localStorage.getItem("persist:root");
+        // if (!flag)
+            // dispatch(fetchDatas())
+        // else if (JSON.parse(JSON.parse(localStorage.getItem("persist:root")).data).data.length===0)dispatch(fetchDatas()); 
         return () => {
+            // localStorage.clear();
             dispatch(initValue());
             dispatch(initData());
-            dispatch(initFavorite());
+            // dispatch(initFavorite());
         }
-    }, [dispatch])
+    }, [])
 
        
     return (

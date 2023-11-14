@@ -3,8 +3,9 @@ import { counter, data, filteres, isLoading } from "../redux/selectors"
 import { ItemCar } from "../components/ItemCar";
 import { Box, Center, Flex, Link } from "@chakra-ui/react";
 import { fetchDatas } from "../redux/operations";
-import { increment } from "../redux/reducer";
+import { increment, initData, initFavorite, initValue } from "../redux/reducer";
 import { nanoid } from "nanoid";
+import { useEffect } from "react";
 
 export const Catalog = ({ onOpen, onClose, isOpen }) => {
     const itemsCars = useSelector(data);
@@ -12,6 +13,18 @@ export const Catalog = ({ onOpen, onClose, isOpen }) => {
     const count = useSelector(counter);
     const filtere = useSelector(filteres);
     
+    useEffect(() => {
+        // const flag = localStorage.getItem("persist:root");
+        // if (!flag)
+        // dispatch(fetchDatas({ make: filtere.length !== 0 ? filtere.filter((el) => el.make)[0].make : '' }))
+        
+        return () => {
+            // localStorage.clear();
+            dispatch(initValue());
+            dispatch(initData());
+            // dispatch(initFavorite());
+        }
+    }, [])
     
     function handlerLoadMore() {
         if (count < 3) {
